@@ -1,10 +1,15 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');  // ← ADICIONE ESTA LINHA
 const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
 // Middleware para parsear JSON
 app.use(express.json());
+
+// Documentação Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Rotas
 app.use('/order', orderRoutes);
