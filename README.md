@@ -48,17 +48,10 @@ npm install --save-dev nodemon
 ### 1. Crie o arquivo do banco de dados
 
 ```bash
-touch database.sqlite
+touch database.sql
 ```
 
 ### 2. Execute o schema SQL
-
-Abra o SQLite e execute os comandos:
-
-```bash
-sqlite3 database.sqlite
-```
-
 Dentro do SQLite, execute:
 
 ```sql
@@ -87,10 +80,6 @@ CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id);
 ```
 
 Ou use o arquivo SQL fornecido:
-
-```bash
-sqlite3 database.sqlite < database_schema.sql
-```
 
 ## ▶️ Executando a Aplicação
 
@@ -420,59 +409,6 @@ DesafioTecnicoJitterbit/
 ├── package.json                 # Dependências do projeto
 ├── .gitignore                   # Arquivos ignorados pelo Git
 └── README.md                    # Documentação
-```
-
-## 📝 Commits
-
-Sequência recomendada de commits para o projeto:
-
-### 1. Configuração Inicial
-```bash
-git init
-git add .gitignore package.json
-git commit -m "chore: configuração inicial do projeto"
-```
-
-### 2. Banco de Dados
-```bash
-git add src/config/database.js database_schema.sql
-git commit -m "feat: adicionar configuração do SQLite"
-```
-
-### 3. Service Layer
-```bash
-git add src/services/orderService.js
-git commit -m "feat: implementar service de pedidos com mapping de dados"
-```
-
-### 4. Controller Layer
-```bash
-git add src/controllers/orderController.js
-git commit -m "feat: implementar controller de pedidos"
-```
-
-### 5. Rotas
-```bash
-git add src/routes/orderRoutes.js
-git commit -m "feat: adicionar rotas da API de pedidos"
-```
-
-### 6. Configuração do Servidor
-```bash
-git add src/app.js server.js
-git commit -m "feat: configurar servidor Express"
-```
-
-### 7. Documentação Swagger
-```bash
-git add src/config/swagger.js src/routes/orderRoutes.js src/app.js server.js package.json
-git commit -m "feat: adicionar documentação Swagger UI"
-```
-
-### 8. Documentação
-```bash
-git add README.md
-git commit -m "docs: adicionar documentação da API"
 ```
 
 ## 🔒 Validações
